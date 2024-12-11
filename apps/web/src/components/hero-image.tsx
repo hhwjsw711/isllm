@@ -1,8 +1,8 @@
 "use client";
 
 import { motion } from "framer-motion";
-import heroImageLight from "public/hero-light.jpg";
-import heroImageDark from "public/hero.jpg";
+import heroImageLight from "public/hero-light.png";
+import heroImageDark from "public/hero.png";
 import { useState } from "react";
 import { DynamicImage } from "./dynamic-image";
 

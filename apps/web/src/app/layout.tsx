@@ -42,7 +42,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            {/* <Header /> */}
+            <Header />
             <main className="container mx-auto px-4 overflow-hidden md:overflow-visible">
               {children}
             </main>

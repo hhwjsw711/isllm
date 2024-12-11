@@ -475,7 +475,7 @@ function Video({ src }: { src: string }) {
         <video
           ref={videoRef}
           src={src}
-          poster="/hero.jpg"
+          poster="/hero.png"
           className="w-full h-full object-cover"
           playsInline
         />
