@@ -498,14 +498,14 @@ function Video({ src }: { src: string }) {
 
 export default function SectionStories() {
   const [selectedStory, setSelectedStory] = useState<Story | null>(null);
-  const [rowSize, setRowSize] = useState(4);
+  const [rowSize, setRowSize] = useState(5);
 
   // 使用 useEffect 在客户端更新 rowSize
   useEffect(() => {
     const updateRowSize = () => {
       if (window.innerWidth < 640) return setRowSize(1); // 手机端
-      if (window.innerWidth < 1024) return setRowSize(2); // 平板
-      setRowSize(4); // 桌面端
+      if (window.innerWidth < 1024) return setRowSize(3); // 平板
+      setRowSize(5); // 桌面端
     };
 
     // 初始化
@@ -527,6 +527,13 @@ export default function SectionStories() {
     }, []);
   }, [rowSize]);
 
+  const handleKeyDown = (event: React.KeyboardEvent, story: Story) => {
+    if (event.key === "Enter" || event.key === " ") {
+      event.preventDefault();
+      setSelectedStory(story);
+    }
+  };
+
   return (
     <Dialog>
       <div className="relative mt-10 sm:mt-20 pb-10 sm:pb-20">
@@ -535,9 +542,9 @@ export default function SectionStories() {
             短片展映
           </h2>
           <div className="flex flex-col gap-6 sm:gap-12 mt-10 sm:mt-20 px-4 sm:px-0">
-            {storyRows.map((row, rowIndex) => (
+            {storyRows.map((row) => (
               <div
-                key={rowIndex}
+                key={row[0].id} // 使用行中第一个故事的 ID 作为 key
                 className="flex flex-col sm:flex-row gap-4 sm:-space-x-4 justify-center"
               >
                 {row.map((story, index) => (
@@ -551,7 +558,12 @@ export default function SectionStories() {
                     `}
                   >
                     <DialogTrigger asChild>
-                      <div onClick={() => setSelectedStory(story)}>
+                      <div
+                        role="button"
+                        tabIndex={0}
+                        onClick={() => setSelectedStory(story)}
+                        onKeyDown={(e) => handleKeyDown(e, story)}
+                      >
                         <StoryCard {...story} />
                       </div>
                     </DialogTrigger>
