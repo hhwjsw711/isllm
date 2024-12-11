@@ -11,7 +11,7 @@ export function Footer() {
               src="/logos/fizz.svg"
               alt="FizzDragon Logo"
               height={60}
-              width={215}
+              width={500}
             />
             <span className="sr-only">FizzDragon</span>
           </Link>
@@ -20,7 +20,7 @@ export function Footer() {
               src="/logos/yu.svg"
               alt="FizzDragon Logo"
               height={60}
-              width={215}
+              width={500}
             />
             <span className="sr-only">Yu</span>
           </Link>
@@ -29,7 +29,7 @@ export function Footer() {
               src="/logos/xing.svg"
               alt="FizzDragon Logo"
               height={60}
-              width={215}
+              width={500}
             />
             <span className="sr-only">Xing</span>
           </Link>
