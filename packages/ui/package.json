@@ -50,6 +50,7 @@
     "@xixixao/uploadstuff": "^0.0.5",
     "class-variance-authority": "^0.7.0",
     "lucide-react": "^0.438.0",
+    "react-icons": "^5.4.0",
     "tailwind-merge": "^2.5.2",
     "tailwindcss-animate": "^1.0.7",
     "zod": "^3.23.8"

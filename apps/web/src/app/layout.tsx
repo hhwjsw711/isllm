@@ -6,6 +6,7 @@ import { cn } from "@v1/ui/utils";
 import { GeistMono } from "geist/font/mono";
 import { GeistSans } from "geist/font/sans";
 import type { Metadata } from "next";
+import { ThemeProvider } from "next-themes";
 import localFont from "next/font/local";
 import { ConvexClientProvider } from "./convex-client-provider";
 
@@ -16,7 +17,7 @@ const DepartureMono = localFont({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://v1-convex.vercel.app"),
-  title: "Create v1",
+  title: "短片展映 | 创未来",
   description:
     "A free, open-source starter kit for your next project, built with insights from Midday.",
 };
@@ -30,14 +31,23 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <body
         className={cn(
-          `${DepartureMono.variable} ${GeistSans.variable} ${GeistMono.variable}`,
-          "antialiased dark",
+          `${GeistSans.variable} ${GeistMono.variable}`,
+          "bg-[#fbfbfb] dark:bg-[#0C0C0C] overflow-x-hidden antialiased",
         )}
       >
         <ConvexClientProvider>
-          <Header />
-          {children}
-          <Footer />
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {/* <Header /> */}
+            <main className="container mx-auto px-4 overflow-hidden md:overflow-visible">
+              {children}
+            </main>
+            <Footer />
+          </ThemeProvider>
         </ConvexClientProvider>
 
         <AnalyticsProvider />
