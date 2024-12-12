@@ -11,7 +11,7 @@ export function Metrics() {
       </Link>
       <Link href="/">
         <div className="flex flex-col md:px-8 text-center">
-          <h4 className="text-[#878787] text-sm mb-4">急速创作</h4>
+          <h4 className="text-[#878787] text-sm mb-4">极速创作</h4>
           <span className="text-2xl font-mono text-stroke">72小时</span>
         </div>
       </Link>
@@ -20,7 +20,7 @@ export function Metrics() {
           <h4 className="text-[#878787] text-sm mb-4">
             与“重庆”有关的AIGC短片
           </h4>
-          <span className="text-2xl font-mono text-stroke">25个</span>
+          <span className="text-2xl font-mono text-stroke">26个</span>
         </div>
       </Link>
       <Link href="/">
